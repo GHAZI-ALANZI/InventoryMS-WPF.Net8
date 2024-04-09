@@ -1,4 +1,5 @@
-﻿using Inventory_MS_WPF.DAL;
+﻿using Inventory_MS_WPF.Controls;
+using Inventory_MS_WPF.DAL;
 using Inventory_MS_WPF.Models;
 using Inventory_MS_WPF.Stores;
 using Inventory_MS_WPF.Utilities;

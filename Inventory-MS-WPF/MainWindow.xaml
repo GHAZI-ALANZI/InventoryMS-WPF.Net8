@@ -4,9 +4,54 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Inventory_MS_WPF"
+                xmlns:controls="clr-namespace:Inventory_MS_WPF.Controls"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        d:Width="1920"
+        d:Height="1080"
+        Title="MainWindow"
+        WindowState="Maximized"
+        Icon="/Assets/logo.png"
+        WindowStyle="None"
+        Background="{DynamicResource MaterialDesignBackground}"
+        Foreground="{DynamicResource MaterialDesignBody}"
+        FontFamily="Sogoe UI">
 
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="0" Width="200">
+                <Grid.Style>
+                    <Style TargetType="Grid">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding IsLoggedIn}" Value="False">
+                                <Setter Property="Visibility" Value="Collapsed"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Grid.Style>
+
+                <controls:NavigationBar/>
+
+            </Grid>
+            <Grid Grid.Column="1">
+                <ContentControl Content="{Binding CurrentViewModel}" Background="Gray"/>
+            </Grid>
+        </Grid>
+
+        <Label Grid.Row="1" HorizontalAlignment="Center" FontWeight="Bold" FontSize="10">
+            <StackPanel >
+
+                <TextBlock Text="©InventoryMS-2024" HorizontalAlignment="Center"/>
+            </StackPanel>
+        </Label>
     </Grid>
 </Window>
