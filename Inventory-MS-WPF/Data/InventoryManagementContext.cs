@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using System.Configuration;
 
-namespace ProjectLex.InventoryManagement.Database.Data
+namespace Inventory_MS_WPF.Data
 {
     public class InventoryManagementContext : DbContext
     {
