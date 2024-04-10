@@ -1,13 +1,13 @@
-﻿<UserControl x:Class="Inventory_MS_WPF.Views.CategoryViews.CategoryListView"
+﻿<UserControl x:Class="Inventory_MS_WPF.Views.CustomerViews.CustomerListView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:Inventory_MS_WPF.Views.CategoryViews"
-             xmlns:controls="clr-namespace:Inventory_MS_WPF.Controls"
+             xmlns:local="clr-namespace:Inventory_MS_WPF.Views.CustomerViews"
+             xmlns:views="clr-namespace:Inventory_MS_WPF.Views.CustomerViews"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-             mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             xmlns:controls="clr-namespace:Inventory_MS_WPF.Controls"
+             mc:Ignorable="d">
 
 
     <materialDesign:DialogHost 
@@ -31,38 +31,40 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
                 </Grid.ColumnDefinitions>
 
                 <TextBlock 
                     Grid.Column="0" 
-                    Text="Categories"
-                    FontWeight="Bold"
-                    Style="{StaticResource MaterialDesignHeadline4TextBlock}"/>
+                    Text="Customers"
+                    Style="{StaticResource MaterialDesignHeadline4TextBlock}"
+                    FontWeight="Bold"/>
 
                 <Button
                     Grid.Column="1"
-                    Command="{ Binding CreateCategoryCommand }">
+                    Command="{ Binding CreateCustomerCommand }">
                     <Button.Style>
                         <Style TargetType="Button" BasedOn="{StaticResource MaterialDesignPaperButton}">
                             <Style.Triggers>
-                                <DataTrigger Binding="{Binding DataContext.CurrentStaff.Role.CategoriesAdd, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}" Value="False">
+                                <DataTrigger Binding="{Binding DataContext.CurrentStaff.Role.CustomersAdd, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}" Value="False">
                                     <Setter Property="Visibility" Value="Collapsed"/>
                                 </DataTrigger>
                             </Style.Triggers>
                         </Style>
                     </Button.Style>
-                    <materialDesign:PackIcon Kind="Add"></materialDesign:PackIcon>
+                    <materialDesign:PackIcon Kind="Add"/>
                 </Button>
             </Grid>
 
-            <Grid 
-                Grid.Row="1">
+
+            <Grid Grid.Row="1">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="auto"/>
                 </Grid.RowDefinitions>
-                <DataGrid Grid.Row="0"
-                    ItemsSource="{Binding Categories}"
+                <DataGrid
+                    Grid.Row="0"
+                    ItemsSource="{Binding Customers}"
                     Style="{StaticResource MaterialDesignDataGrid}"
                     BorderBrush="Black"
                     BorderThickness="2"
@@ -70,63 +72,85 @@
                     AutoGenerateColumns="False">
                     <DataGrid.Columns>
                         <DataGridTextColumn
-                            Header="Name"
-                            HeaderStyle="{StaticResource MaterialDesignDataGridColumnHeader}"
-                            Binding="{Binding CategoryName}"
-                            Width="auto"/>
+                                Header="Firstname"
+                                HeaderStyle="{StaticResource MaterialDesignDataGridColumnHeader}"
+                                CellStyle="{StaticResource MaterialDesignDataGridCell}"
+                                Binding="{Binding CustomerFirstname}"
+                                Width="auto"/>
 
                         <DataGridTextColumn
-                            Header="Description"
-                            HeaderStyle="{StaticResource MaterialDesignDataGridColumnHeader}"
-                            Binding="{Binding CategoryDescription}"
-                            Width="auto"/>
+                                Header="Lastname"
+                                HeaderStyle="{StaticResource MaterialDesignDataGridColumnHeader}"
+                                CellStyle="{StaticResource MaterialDesignDataGridCell}"
+                                Binding="{Binding CustomerLastname}"
+                                Width="auto"/>
 
                         <DataGridTextColumn
-                            Header="Status"
-                            HeaderStyle="{StaticResource MaterialDesignDataGridColumnHeader}"
-                            Binding="{Binding CategoryStatus}"
-                            Width="auto"/>
+                                Header="Address"
+                                HeaderStyle="{StaticResource MaterialDesignDataGridColumnHeader}"
+                                CellStyle="{StaticResource MaterialDesignDataGridCell}"
+                                Binding="{Binding CustomerAddress}"
+                                Width="auto"/>
 
-                        <DataGridTemplateColumn 
+                        <DataGridTextColumn
+                                Header="Phone"
+                                HeaderStyle="{StaticResource MaterialDesignDataGridColumnHeader}"
+                                CellStyle="{StaticResource MaterialDesignDataGridCell}"
+                                Binding="{Binding CustomerPhone}"
+                                Width="auto"/>
+
+                        <DataGridTextColumn
+                                Header="Email"
+                                HeaderStyle="{StaticResource MaterialDesignDataGridColumnHeader}"
+                                CellStyle="{StaticResource MaterialDesignDataGridCell}"
+                                Binding="{Binding CustomerEmail}"
+                                Width="auto"/>
+
+                        <DataGridTextColumn
+                                Header="Assigned Staff"
+                                HeaderStyle="{StaticResource MaterialDesignDataGridColumnHeader}"
+                                CellStyle="{StaticResource MaterialDesignDataGridCell}"
+                                Binding="{Binding Staff.StaffFullname}"
+                                Width="auto"/>
+
+                        <DataGridTemplateColumn
                             Header="Actions"
                             HeaderStyle="{StaticResource MaterialDesignDataGridColumnHeader}"
                             Width="auto">
-
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
                                     <StackPanel Orientation="Horizontal">
-                                        <Button
+                                        <Button 
                                             Grid.Column="0"
                                             BorderBrush="Orange"
                                             Margin="0 0 5 0"
                                             Command="{
-                                                Binding DataContext.EditCategoryCommand, 
-                                                RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:CategoryListView}}"
+                                                Binding DataContext.EditCustomerCommand, 
+                                                RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=views:CustomerListView}}"
                                             CommandParameter="{Binding}">
                                             <Button.Style>
                                                 <Style TargetType="Button" BasedOn="{StaticResource MaterialDesignPaperButton}">
                                                     <Style.Triggers>
-                                                        <DataTrigger Binding="{Binding DataContext.CurrentStaff.Role.CategoriesEdit, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}" Value="False">
+                                                        <DataTrigger Binding="{Binding DataContext.CurrentStaff.Role.CustomersEdit, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}" Value="False">
                                                             <Setter Property="Visibility" Value="Collapsed"/>
                                                         </DataTrigger>
                                                     </Style.Triggers>
                                                 </Style>
                                             </Button.Style>
                                             <materialDesign:PackIcon Kind="Edit"/>
-
                                         </Button>
 
-                                        <Button
+                                        <Button 
                                             Grid.Column="1"
                                             BorderBrush="OrangeRed"
                                             Command="{
-                                                Binding DataContext.RemoveCategoryCommand, 
-                                                RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:CategoryListView}}"
+                                                Binding DataContext.RemoveCustomerCommand, 
+                                                RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=views:CustomerListView}}"
                                             CommandParameter="{Binding}">
                                             <Button.Style>
                                                 <Style TargetType="Button" BasedOn="{StaticResource MaterialDesignPaperButton}">
                                                     <Style.Triggers>
-                                                        <DataTrigger Binding="{Binding DataContext.CurrentStaff.Role.CategoriesDelete, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}" Value="False">
+                                                        <DataTrigger Binding="{Binding DataContext.CurrentStaff.Role.CustomersDelete, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}" Value="False">
                                                             <Setter Property="Visibility" Value="Collapsed"/>
                                                         </DataTrigger>
                                                     </Style.Triggers>
@@ -138,7 +162,6 @@
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
-
                     </DataGrid.Columns>
                 </DataGrid>
                 <Grid Grid.Row="1">
@@ -147,23 +170,22 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <Grid Grid.Column="0">
-                        <controls:FilterControl Filter="{Binding CategoryListViewHelper.Filter}"/>
+                        <controls:FilterControl Filter="{Binding CustomerListViewHelper.Filter}"/>
                     </Grid>
                     <Grid Grid.Column="1">
                         <controls:PaginationControl
-                            CurrentPage="{Binding CategoryListViewHelper.CurrentPage}"
-                            NumberOfPages="{Binding CategoryListViewHelper.NumberOfPages}"
-                            RecordsPerPage="{Binding CategoryListViewHelper.RecordsPerPage}"
-                            SelectedRecordsPerPage="{Binding CategoryListViewHelper.SelectedRecordsPerPage}"
-                            FirstPageCommand="{Binding CategoryListViewHelper.FirstPageCommand}"
-                            PreviousPageCommand="{Binding CategoryListViewHelper.PreviousPageCommand}"
-                            NextPageCommand="{Binding CategoryListViewHelper.NextPageCommand}"
-                            LastPageCommand="{Binding CategoryListViewHelper.LastPageCommand}"
-                        />
+                            CurrentPage="{Binding CustomerListViewHelper.CurrentPage}"
+                            NumberOfPages="{Binding CustomerListViewHelper.NumberOfPages}"
+                            RecordsPerPage="{Binding CustomerListViewHelper.RecordsPerPage}"
+                            SelectedRecordsPerPage="{Binding CustomerListViewHelper.SelectedRecordsPerPage}"
+                            FirstPageCommand="{Binding CustomerListViewHelper.FirstPageCommand}"
+                            PreviousPageCommand="{Binding CustomerListViewHelper.PreviousPageCommand}"
+                            NextPageCommand="{Binding CustomerListViewHelper.NextPageCommand}"
+                            LastPageCommand="{Binding CustomerListViewHelper.LastPageCommand}"
+                            />
                     </Grid>
                 </Grid>
             </Grid>
         </Grid>
-
     </materialDesign:DialogHost>
 </UserControl>
