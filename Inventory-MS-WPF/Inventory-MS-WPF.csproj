@@ -41,7 +41,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Views\LocationViews\" />
     <Folder Include="Views\StorageViews\" />
     <Folder Include="Views\ProductViews\" />
     <Folder Include="Views\OrderViews\" />
