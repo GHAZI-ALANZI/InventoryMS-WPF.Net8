@@ -45,7 +45,6 @@
     <Folder Include="Views\LocationViews\" />
     <Folder Include="Views\SupplierViews\" />
     <Folder Include="Views\StorageViews\" />
-    <Folder Include="Views\RoleViews\" />
     <Folder Include="Views\ProductViews\" />
     <Folder Include="Views\OrderViews\" />
     <Folder Include="Views\OrderDetailViews\" />
