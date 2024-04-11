@@ -1,0 +1,214 @@
+﻿<UserControl x:Class="Inventory_MS_WPF.Views.OrderViews.EditOrderView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Inventory_MS_WPF.Views.OrderViews"
+             xmlns:views="clr-namespace:Inventory_MS_WPF.Views.OrderViews"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:utilities="clr-namespace:Inventory_MS_WPF.Utilities"
+             mc:Ignorable="d" 
+             d:DesignHeight="1080" d:DesignWidth="1920">
+
+    <materialDesign:DialogHost IsOpen="{Binding IsDialogOpen, Mode=OneWay}">
+
+        <materialDesign:DialogHost.DialogContent>
+            <materialDesign:Card UniformCornerRadius="10">
+                <ContentControl Content="{ Binding DialogViewModel }"/>
+            </materialDesign:Card>
+        </materialDesign:DialogHost.DialogContent>
+
+        <Grid Margin="50 50 50 50">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock
+                    Grid.Column="0"
+                    Style="{StaticResource MaterialDesignHeadline4TextBlock}"
+                    FontWeight="Bold"
+                    Text="Order Form"/>
+
+                <StackPanel
+                    Grid.Column="1" MinWidth="300">
+                    <TextBlock
+                        Grid.Row="0" 
+                        Text="Delivery Status"
+                        Style="{StaticResource MaterialDesignTextBlock}"
+                        FontWeight="DemiBold"/>
+
+                    <ComboBox 
+                        Grid.Row="1"
+                        Style="{StaticResource MaterialDesignComboBox}"
+                        Padding="10"
+                        ItemsSource="{ Binding Source={x:Static utilities:Constants.DeliveryStatuses}, Mode=OneWay}"
+                        SelectedValue="{Binding DeliveryStatus}">
+                    </ComboBox>
+                </StackPanel>
+
+            </Grid>
+
+
+            <Grid 
+                Grid.Row="1"
+                Margin="0 30 0 0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock
+                    Grid.Row="0"
+                    Text="Customer"
+                    Style="{StaticResource MaterialDesignTextBlock}"
+                    FontWeight="DemiBold"/>
+
+                <TextBlock
+                    Grid.Row="1"
+                    Text="{ Binding Customer.CustomerFullname }" 
+                    Style="{StaticResource MaterialDesignTextBlock}"/>
+            </Grid>
+
+
+            <Grid 
+                Grid.Row="2"
+                Margin="0 30 0 0">
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <TextBlock
+                        Margin="0 0 30 0"
+                        Text="Add Product"
+                        VerticalAlignment="Center"
+                        Style="{StaticResource MaterialDesignTextBlock}"
+                        FontWeight="DemiBold"/>
+
+                    <Button 
+                        Command="{ Binding CreateOrderDetailCommand }"
+                        Style="{StaticResource MaterialDesignPaperButton}"
+                        Width="60">
+                        <materialDesign:PackIcon Kind="Add"/>
+                    </Button>
+                </StackPanel>
+
+            </Grid>
+
+
+            <Grid 
+                Grid.Row="3"
+                Margin="0 30 0 0">
+                <DataGrid
+                        ItemsSource="{Binding OrderDetails}"
+                        Style="{StaticResource MaterialDesignDataGrid}"
+                        BorderBrush="Black"
+                        BorderThickness="2"
+                        IsReadOnly="True"
+                        AutoGenerateColumns="False">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn
+                                Header="Product"
+                                HeaderStyle="{ StaticResource MaterialDesignDataGridColumnHeader }"
+                                CellStyle="{ StaticResource MaterialDesignDataGridCell }"
+                                Binding="{ Binding Product.ProductName }"
+                                Width="auto"
+                                MinWidth="100"/>
+
+                        <DataGridTextColumn
+                                Header="Quantity"
+                                HeaderStyle="{ StaticResource MaterialDesignDataGridColumnHeader }"
+                                CellStyle="{ StaticResource MaterialDesignDataGridCell }"
+                                Binding="{ Binding OrderDetailQuantity }"
+                                Width="auto"
+                                MinWidth="100"/>
+
+                        <DataGridTextColumn
+                                Header="Amount"
+                                HeaderStyle="{ StaticResource MaterialDesignDataGridColumnHeader }"
+                                CellStyle="{ StaticResource MaterialDesignDataGridCell }"
+                                Binding="{ Binding OrderDetailAmount }"
+                                Width="auto"
+                                MinWidth="100"/>
+
+                        <DataGridTemplateColumn>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Button 
+                                            Grid.Column="0"
+                                            Margin="0 0 5 0"
+                                            BorderBrush="Orange"
+                                            Style="{StaticResource MaterialDesignPaperButton}"
+                                            Command="{
+                                                Binding DataContext.EditOrderDetailCommand, 
+                                                RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=views:EditOrderView}}"
+                                            CommandParameter="{Binding}">
+                                            <materialDesign:PackIcon Kind="Edit"/>
+                                        </Button>
+
+                                        <Button 
+                                            Grid.Column="1"
+                                            BorderBrush="Red"
+                                            Style="{StaticResource MaterialDesignPaperButton}"
+                                            Command="{
+                                                Binding DataContext.RemoveOrderDetailCommand, 
+                                                RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=views:EditOrderView}}"
+                                            CommandParameter="{Binding}">
+                                            <materialDesign:PackIcon Kind="Remove"/>
+                                        </Button>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+
+            <Grid 
+                Grid.Row="4"
+                Margin="0 30 0 0">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <TextBlock 
+                        Text="Total"
+                        Margin="0 0 30 0"
+                        Style="{StaticResource MaterialDesignTextBlock}"
+                        FontWeight="DemiBold"/>
+
+                    <TextBlock 
+                        MinWidth="300"
+                        Text="{Binding OrderTotal, UpdateSourceTrigger=PropertyChanged}"
+                        Style="{StaticResource MaterialDesignTextBlock}"/>
+                </StackPanel>
+            </Grid>
+
+
+            <StackPanel 
+                Grid.Row="5" 
+                Orientation="Horizontal"
+                Margin="0 30 0 0"
+                HorizontalAlignment="Right">
+                <Button 
+                    Content="Submit"
+                    Command="{Binding SubmitCommand}"
+                    CommandParameter="{Binding}"
+                    Style="{StaticResource MaterialDesignPaperButton}"/>
+                <Button 
+                    Margin="10 0 0 0" 
+                    Content="Cancel"
+                    Command="{Binding CancelCommand}"
+                    Style="{StaticResource MaterialDesignPaperLightButton}"/>
+
+            </StackPanel>
+        </Grid>
+    </materialDesign:DialogHost>
+
+</UserControl>
