@@ -1,0 +1,105 @@
+﻿<UserControl x:Class="Inventory_MS_WPF.Views.StorageViews.StorageListView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Inventory_MS_WPF.Views.StorageViews"
+             xmlns:views="clr-namespace:Inventory_MS_WPF.Views.StorageViews"
+             xmlns:controls="clr-namespace:Inventory_MS_WPF.Controls"
+             mc:Ignorable="d"
+             >
+
+    <Grid Margin="30 30 30 30">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock 
+                Grid.Column="0" 
+                Text="Storages"
+                Style="{StaticResource MaterialDesignHeadline4TextBlock}"
+                FontWeight="Bold"/>
+
+        </Grid>
+
+        <Grid 
+            Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <DataGrid
+                Grid.Row="0"
+                ItemsSource="{Binding Locations}"
+                Style="{StaticResource MaterialDesignDataGrid}"
+                BorderBrush="Black"
+                BorderThickness="2"
+                IsReadOnly="True"
+                AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn
+                            Header="Location"
+                            HeaderStyle="{StaticResource MaterialDesignDataGridColumnHeader}"
+                            Binding="{Binding LocationName}"
+                            Width="auto"/>
+
+
+                    <DataGridTemplateColumn 
+                            Header="Actions"
+                            HeaderStyle="{StaticResource MaterialDesignDataGridColumnHeader}"
+                            Width="auto">
+
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <Button
+                                        Content="See Products"
+                                        Grid.Column="0"
+                                        BorderBrush="Orange"
+                                        Style="{StaticResource MaterialDesignPaperButton}"
+                                        Command="{
+                                            Binding DataContext.LocationDetailsCommand, 
+                                            RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=views:StorageListView}}"
+                                        CommandParameter="{Binding}">
+                                        <!--<materialDesign:PackIcon Kind="Details"/>-->
+                                    </Button>
+
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                </DataGrid.Columns>
+            </DataGrid>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <controls:FilterControl Filter="{Binding StorageListViewHelper.Filter}"/>
+                </Grid>
+                <Grid Grid.Column="1">
+                    <controls:PaginationControl
+                        CurrentPage="{Binding StorageListViewHelper.CurrentPage}"
+                        NumberOfPages="{Binding StorageListViewHelper.NumberOfPages}"
+                        RecordsPerPage="{Binding StorageListViewHelper.RecordsPerPage}"
+                        SelectedRecordsPerPage="{Binding StorageListViewHelper.SelectedRecordsPerPage}"
+                        FirstPageCommand="{Binding StorageListViewHelper.FirstPageCommand}"
+                        PreviousPageCommand="{Binding StorageListViewHelper.PreviousPageCommand}"
+                        NextPageCommand="{Binding StorageListViewHelper.NextPageCommand}"
+                        LastPageCommand="{Binding StorageListViewHelper.LastPageCommand}"
+                        />
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+
+</UserControl>
