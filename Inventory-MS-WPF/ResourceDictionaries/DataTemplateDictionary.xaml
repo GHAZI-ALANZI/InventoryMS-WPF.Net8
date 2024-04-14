@@ -1,0 +1,232 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:views="clr-namespace:Inventory_MS_WPF.Views"
+                    xmlns:viewsCategory="clr-namespace:Inventory_MS_WPF.Views.CategoryViews"
+                    xmlns:viewsCustomer="clr-namespace:Inventory_MS_WPF.Views.CustomerViews"
+                    xmlns:viewsDefective="clr-namespace:Inventory_MS_WPF.Views.DefectiveViews"
+                    xmlns:viewsLocation="clr-namespace:Inventory_MS_WPF.Views.LocationViews"
+                    xmlns:viewsOrderDetail="clr-namespace:Inventory_MS_WPF.Views.OrderDetailViews"
+                    xmlns:viewsOrder="clr-namespace:Inventory_MS_WPF.Views.OrderViews"
+                    xmlns:viewsProduct="clr-namespace:Inventory_MS_WPF.Views.ProductViews"
+                    xmlns:viewsRole="clr-namespace:Inventory_MS_WPF.Views.RoleViews"
+                    xmlns:viewsStaff="clr-namespace:Inventory_MS_WPF.Views.StaffViews"
+                    xmlns:viewsStorage="clr-namespace:Inventory_MS_WPF.Views.StorageViews"
+                    xmlns:viewsSupplier="clr-namespace:Inventory_MS_WPF.Views.SupplierViews"
+                    xmlns:view_models="clr-namespace:Inventory_MS_WPF.ViewModels"
+                    xmlns:controls="clr-namespace:Inventory_MS_WPF.Controls"
+                    xmlns:local="clr-namespace:Inventory_MS_WPF">
+
+
+    <DataTemplate DataType="{x:Type view_models:LoginViewModel}">
+        <views:LoginView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type view_models:MainViewModel}">
+        <local:MainWindow />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type view_models:DashboardViewModel}">
+        <views:DashboardView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type view_models:LogListViewModel}">
+        <views:LogListView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type view_models:PrintInvoiceViewModel}">
+        <views:PrintInvoiceView/>
+    </DataTemplate>
+
+
+
+    <DataTemplate DataType="{x:Type view_models:CategoryListViewModel}">
+        <viewsCategory:CategoryListView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type view_models:CreateCategoryViewModel}">
+        <viewsCategory:CategoryFormView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type view_models:EditCategoryViewModel}">
+        <viewsCategory:CategoryFormView />
+    </DataTemplate>
+
+    
+    
+    
+    <DataTemplate DataType="{x:Type view_models:LocationListViewModel}">
+        <viewsLocation:LocationListView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type view_models:CreateLocationViewModel}">
+        <viewsLocation:LocationFormView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type view_models:EditLocationViewModel}">
+        <viewsLocation:LocationFormView />
+    </DataTemplate>
+
+
+
+
+    <DataTemplate DataType="{x:Type view_models:SupplierListViewModel}">
+        <viewsSupplier:SupplierListView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type view_models:CreateSupplierViewModel}">
+        <viewsSupplier:SupplierFormView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type view_models:EditSupplierViewModel}">
+        <viewsSupplier:SupplierFormView />
+    </DataTemplate>
+
+
+
+
+    <DataTemplate DataType="{x:Type view_models:RoleListViewModel}">
+        <viewsRole:RoleListView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type view_models:CreateRoleViewModel}">
+        <viewsRole:RoleFormView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type view_models:EditRoleViewModel}">
+        <viewsRole:RoleFormView />
+    </DataTemplate>
+
+
+
+
+    <DataTemplate DataType="{x:Type view_models:StaffListViewModel}">
+        <viewsStaff:StaffListView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type view_models:CreateStaffViewModel}">
+        <viewsStaff:StaffFormView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type view_models:EditStaffViewModel}">
+        <viewsStaff:StaffFormView />
+    </DataTemplate>
+
+
+
+
+    <!--<DataTemplate DataType="{x:Type view_models:StoreListViewModel}">
+        <viewsStorage:StoreListView />
+    </DataTemplate>-->
+
+    <!--<DataTemplate DataType="{x:Type view_models:CreateStoreViewModel}">
+        <views:CreateStoreView />
+    </DataTemplate>-->
+
+    <!--<DataTemplate DataType="{x:Type view_models:EditStoreViewModel}">
+        <views:EditStoreView />
+    </DataTemplate>-->
+
+
+
+    <DataTemplate DataType="{x:Type view_models:ProductListViewModel}">
+        <viewsProduct:ProductListView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type view_models:CreateProductViewModel}">
+        <viewsProduct:ProductFormView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type view_models:EditProductViewModel}">
+        <viewsProduct:ProductFormView />
+    </DataTemplate>
+
+    
+    
+    
+    <DataTemplate DataType="{x:Type view_models:CustomerListViewModel}">
+        <viewsCustomer:CustomerListView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type view_models:CreateCustomerViewModel}">
+        <viewsCustomer:CustomerFormView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type view_models:EditCustomerViewModel}">
+        <viewsCustomer:CustomerFormView />
+    </DataTemplate>
+
+
+
+
+    <DataTemplate DataType="{x:Type view_models:OrderListViewModel}">
+        <viewsOrder:OrderListView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type view_models:CreateOrderViewModel}">
+        <viewsOrder:CreateOrderView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type view_models:EditOrderViewModel}">
+        <viewsOrder:EditOrderView />
+    </DataTemplate>
+    
+    
+
+    <DataTemplate DataType="{x:Type view_models:DefectiveListViewModel}">
+        <viewsDefective:DefectiveListView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type view_models:CreateDefectiveViewModel}">
+        <viewsDefective:CreateDefectiveView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type view_models:EditDefectiveViewModel}">
+        <viewsDefective:EditDefectiveView />
+    </DataTemplate>
+
+
+    
+    
+    <DataTemplate DataType="{x:Type view_models:StorageListViewModel}">
+        <viewsStorage:StorageListView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type view_models:StorageDetailViewModel}">
+        <viewsStorage:StorageDetailView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type view_models:DisposeProductViewModel}">
+        <viewsStorage:DisposeProductView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type view_models:CreateProductLocationViewModel}">
+        <views:CreateProductLocationView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type view_models:GetProductViewModel}">
+        <viewsStorage:GetProductView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type view_models:DeclareDefectiveProductViewModel}">
+        <viewsStorage:DeclareDefectiveProductView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type view_models:MoveProductViewModel}">
+        <viewsStorage:MoveProductView />
+    </DataTemplate>
+
+
+    <!--<datatemplate datatype="{x:type view_models:orderdetaillistviewmodel}">
+        <view_models:orderdetaillistview />
+    </datatemplate>-->
+
+    <DataTemplate DataType="{x:Type view_models:CreateOrderDetailViewModel}">
+        <viewsOrderDetail:CreateOrderDetailView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type view_models:EditOrderDetailViewModel}">
+        <viewsOrderDetail:EditOrderDetailView />
+    </DataTemplate>
+    
+    
+</ResourceDictionary>

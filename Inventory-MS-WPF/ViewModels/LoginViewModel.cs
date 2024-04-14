@@ -53,8 +53,7 @@ namespace Inventory_MS_WPF.ViewModels
         public void Help()
         {
             MessageBox.Show(Application.Current.MainWindow, "Contact Us\n\n" +
-                "Email: support.projectlexlabs@outlook.com\n" +
-                "Facebook Page: ProjectLex Software Lab", "Help");
+                "Email: support@co.com");
         }
 
         public void ToggleTheme()
