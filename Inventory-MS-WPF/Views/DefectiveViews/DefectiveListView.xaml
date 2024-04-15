@@ -134,7 +134,7 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <Grid Grid.Column="0">
-                        <controls:FilterControl Filter="{Binding DefectiveListViewHelper.Filter}"/>
+                        <controls:FilterControl Filter="{Binding DefectiveListViewHelper.Filter}" FontSize="16" FontFamily="Segoe UI Black"/>
                     </Grid>
                     <Grid Grid.Column="1">
                         <controls:PaginationControl
@@ -145,7 +145,7 @@
                             FirstPageCommand="{Binding DefectiveListViewHelper.FirstPageCommand}"
                             PreviousPageCommand="{Binding DefectiveListViewHelper.PreviousPageCommand}"
                             NextPageCommand="{Binding DefectiveListViewHelper.NextPageCommand}"
-                            LastPageCommand="{Binding DefectiveListViewHelper.LastPageCommand}"
+                            LastPageCommand="{Binding DefectiveListViewHelper.LastPageCommand}" FontSize="16" FontFamily="Segoe UI Black"
                             />
                     </Grid>
                 </Grid>

@@ -135,7 +135,7 @@
                     </Grid.ColumnDefinitions>
                     <Grid Grid.Column="0">
                         <Grid Grid.Column="0">
-                            <controls:FilterControl Filter="{Binding LocationListViewHelper.Filter}"/>
+                            <controls:FilterControl Filter="{Binding LocationListViewHelper.Filter}" FontSize="16" FontFamily="Arial Black"/>
                         </Grid>
                     </Grid>
                     <Grid Grid.Column="1">
@@ -147,7 +147,7 @@
                             FirstPageCommand="{Binding LocationListViewHelper.FirstPageCommand}"
                             PreviousPageCommand="{Binding LocationListViewHelper.PreviousPageCommand}"
                             NextPageCommand="{Binding LocationListViewHelper.NextPageCommand}"
-                            LastPageCommand="{Binding LocationListViewHelper.LastPageCommand}"
+                            LastPageCommand="{Binding LocationListViewHelper.LastPageCommand}" FontSize="16" FontFamily="Segoe UI Black"
                         />
                     </Grid>
                 </Grid>

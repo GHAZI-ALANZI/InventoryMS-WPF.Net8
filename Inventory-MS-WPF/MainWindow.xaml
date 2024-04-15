@@ -9,11 +9,19 @@
         d:Width="700"
         d:Height="800"
         Title="MainWindow"
-        WindowState="Maximized"
+        
         WindowStyle="None"
-        Background="{DynamicResource MaterialDesignBackground}"
         Foreground="{DynamicResource MaterialDesignBody}"
-        FontFamily="Sogoe UI" Icon="/logo.png">
+        FontFamily="Sogoe UI" Icon="/logo.png" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <LinearGradientBrush x:Key="BackgroundIMS" EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#C42969C8" Offset="0.067"/>
+            <GradientStop Color="#FF331CB1" Offset="0.681"/>
+        </LinearGradientBrush>
+    </Window.Resources>
+    <Window.Background>
+        <ImageBrush ImageSource="/skyBackground.png"/>
+    </Window.Background>
 
     <Grid>
         <Grid.RowDefinitions>
@@ -49,7 +57,7 @@
         <Label Grid.Row="1" HorizontalAlignment="Center" FontWeight="Bold" FontSize="10">
             <StackPanel >
 
-                <TextBlock Text="©InventoryMS-2024" HorizontalAlignment="Center"/>
+                <TextBlock Text="©InventoryMS-2024" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold" FontFamily="Segoe Print"/>
             </StackPanel>
         </Label>
     </Grid>

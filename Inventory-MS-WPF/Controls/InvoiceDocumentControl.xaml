@@ -23,7 +23,7 @@
         <Label Grid.Row="0" FontSize="48" FontWeight="DemiBold">
             <StackPanel Orientation="Horizontal">
                 <Image Source="/Assets/IMSLogo.png" Width="50" VerticalAlignment="Center"/>
-                <TextBlock Text=" IMS INVOICE" VerticalAlignment="Center" Foreground="Black"/>
+                <TextBlock Text=" IMS INVOICE" VerticalAlignment="Center" Foreground="Black" FontFamily="Segoe UI Black"/>
             </StackPanel>
         </Label>
 
@@ -175,7 +175,7 @@
                 <Rectangle Grid.Row="3" Height="1" Fill="{StaticResource MaterialDesignDivider}"/>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                     <TextBlock
-                        Text="₱ "
+                        Text="$"
                         FontSize="32"
                         FontWeight="DemiBold" Foreground="Black"/>
                     <TextBlock 

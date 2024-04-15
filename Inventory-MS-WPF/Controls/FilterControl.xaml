@@ -12,7 +12,7 @@
                 Text="Filter: " 
                 VerticalAlignment="Center" 
                 FontWeight="DemiBold" 
-                Margin="5"/>
+                Margin="5" FontSize="16" FontFamily="Arial Black"/>
 
             <TextBox 
                 Text="{Binding Filter, ElementName=CustomFilterControl,UpdateSourceTrigger=PropertyChanged}" 

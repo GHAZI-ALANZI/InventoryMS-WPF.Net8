@@ -14,7 +14,7 @@ namespace Inventory_MS_WPF
         private readonly AuthenticationStore _authenticationStore;
         public App()
         {
-            SplashScreen splashScreen = new SplashScreen(@"./Assets/SplashScreen.png");
+            SplashScreen splashScreen = new SplashScreen(@"./Assets/SplashScreen.jpg");
             splashScreen.Show(true);
             _navigationStore = new NavigationStore();
             _authenticationStore = new AuthenticationStore();

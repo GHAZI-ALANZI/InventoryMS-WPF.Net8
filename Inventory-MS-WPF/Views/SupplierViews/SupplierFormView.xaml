@@ -162,12 +162,12 @@
                 Content="Submit"
                 Command="{Binding SubmitCommand}"
                 Style="{StaticResource MaterialDesignPaperButton}"
-                CommandParameter="{Binding}"/>
+                CommandParameter="{Binding}" Background="#FF00D4C0"/>
             <Button 
                 Margin="10 0 0 0" 
                 Content="Cancel"
                 Style="{StaticResource MaterialDesignPaperLightButton}"
-                Command="{ Binding CancelCommand}"/>
+                Command="{ Binding CancelCommand}" Background="#FFFF0101" Foreground="#DDFFFFFF"/>
         </StackPanel>
 
 

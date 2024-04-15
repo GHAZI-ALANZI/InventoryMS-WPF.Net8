@@ -181,7 +181,7 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <Grid Grid.Column="0">
-                        <controls:FilterControl Filter="{Binding ProductListViewHelper.Filter}"/>
+                        <controls:FilterControl Filter="{Binding ProductListViewHelper.Filter}" FontSize="16" FontFamily="Arial Black"/>
                     </Grid>
                     <Grid Grid.Column="1">
                         <controls:PaginationControl
@@ -192,7 +192,7 @@
                             FirstPageCommand="{Binding ProductListViewHelper.FirstPageCommand}"
                             PreviousPageCommand="{Binding ProductListViewHelper.PreviousPageCommand}"
                             NextPageCommand="{Binding ProductListViewHelper.NextPageCommand}"
-                            LastPageCommand="{Binding ProductListViewHelper.LastPageCommand}"
+                            LastPageCommand="{Binding ProductListViewHelper.LastPageCommand}" FontSize="16" FontFamily="Segoe UI Black"
                         />
                     </Grid>
                 </Grid>

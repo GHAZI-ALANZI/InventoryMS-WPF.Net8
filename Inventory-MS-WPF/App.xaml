@@ -4,6 +4,7 @@
              xmlns:local="clr-namespace:Inventory_MS_WPF"
              >
     <Application.Resources>
+        
         <ResourceDictionary>
 
             <ResourceDictionary.MergedDictionaries>
@@ -14,6 +15,10 @@
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.Blue.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />
             </ResourceDictionary.MergedDictionaries>
+            <LinearGradientBrush x:Key="RevenueBackground" EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF19315C" Offset="0.177"/>
+                <GradientStop Color="#FF0E78AB" Offset="0.875"/>
+            </LinearGradientBrush>
 
         </ResourceDictionary>
     </Application.Resources>

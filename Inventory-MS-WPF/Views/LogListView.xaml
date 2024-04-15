@@ -84,7 +84,7 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <Grid Grid.Column="0">
-                    <controls:FilterControl Filter="{Binding LogListViewHelper.Filter}"/>
+                    <controls:FilterControl Filter="{Binding LogListViewHelper.Filter}" FontSize="16" FontFamily="Arial Black"/>
                 </Grid>
                 <Grid Grid.Column="1">
                     <controls:PaginationControl
@@ -95,7 +95,7 @@
                         FirstPageCommand="{Binding LogListViewHelper.FirstPageCommand}"
                         PreviousPageCommand="{Binding LogListViewHelper.PreviousPageCommand}"
                         NextPageCommand="{Binding LogListViewHelper.NextPageCommand}"
-                        LastPageCommand="{Binding LogListViewHelper.LastPageCommand}"/>
+                        LastPageCommand="{Binding LogListViewHelper.LastPageCommand}" FontSize="16" FontFamily="Segoe UI Black"/>
                 </Grid>
             </Grid>
 

@@ -11,18 +11,18 @@
         <StackPanel 
             Orientation="Horizontal"
             HorizontalAlignment="Right">
-            <TextBlock Text="Records per page" Margin="5" VerticalAlignment="Center" FontWeight="DemiBold"/>
+            <TextBlock Text="Records per page" Margin="5" VerticalAlignment="Center" FontWeight="DemiBold" FontSize="16" FontFamily="Arial Black"/>
             <ComboBox 
                 ItemsSource="{Binding RecordsPerPage,ElementName=CustomPaginationControl}" 
                 SelectedItem="{Binding SelectedRecordsPerPage,ElementName=CustomPaginationControl}" 
                 VerticalAlignment="Center"
                 HorizontalAlignment="Center"
                 Margin="5" Width="80"
-                HorizontalContentAlignment="Center"
+                HorizontalContentAlignment="Center" Foreground="#FF001FFF"
                 />
 
-            <Button Content="&lt;&lt;" ToolTip="First Page" Margin="5" Command="{Binding FirstPageCommand, ElementName=CustomPaginationControl}" Style="{StaticResource MaterialDesignFlatButton}"/>
-            <Button Content="&lt;" ToolTip="Previous Page" Margin="5" Command="{Binding PreviousPageCommand,ElementName=CustomPaginationControl}" Style="{StaticResource MaterialDesignFlatButton}"/>
+            <Button Content="&lt;&lt;" ToolTip="First Page" Margin="5" Command="{Binding FirstPageCommand, ElementName=CustomPaginationControl}" Style="{StaticResource MaterialDesignFlatButton}" Foreground="#FF001FFF" FontSize="24" FontWeight="Bold" FontFamily="Segoe UI Black" Height="38" Background="{x:Null}"/>
+            <Button Content="&lt;" ToolTip="Previous Page" Margin="5" Command="{Binding PreviousPageCommand,ElementName=CustomPaginationControl}" Style="{StaticResource MaterialDesignFlatButton}" FontSize="24" FontFamily="Segoe UI Black" Foreground="#FF001FFF" Height="37"/>
             <TextBlock VerticalAlignment="Center">
                 <TextBlock.Text>
                     <MultiBinding StringFormat=" {0} of {1}">
@@ -31,8 +31,8 @@
                     </MultiBinding>
                 </TextBlock.Text>
             </TextBlock>
-            <Button Content="&gt;" ToolTip="Next Page" Margin="5" Command="{Binding NextPageCommand, ElementName=CustomPaginationControl}" Style="{StaticResource MaterialDesignFlatButton}"/>
-            <Button Content="&gt;&gt;" ToolTip="Last Page" Margin="5" Command="{Binding LastPageCommand, ElementName=CustomPaginationControl}" Style="{StaticResource MaterialDesignFlatButton}"/>
+            <Button Content="&gt;" ToolTip="Next Page" Margin="5" Command="{Binding NextPageCommand, ElementName=CustomPaginationControl}" Style="{StaticResource MaterialDesignFlatButton}" Foreground="#FF001FFF" FontSize="24" FontFamily="Segoe UI Black" Height="37"/>
+            <Button Content="&gt;&gt;" ToolTip="Last Page" Margin="5" Command="{Binding LastPageCommand, ElementName=CustomPaginationControl}" Style="{StaticResource MaterialDesignFlatButton}" Foreground="#FF001FFF" FontSize="24" FontFamily="Segoe UI Black" Height="37"/>
         </StackPanel>
     </Grid>
 </UserControl>

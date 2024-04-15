@@ -13,8 +13,12 @@
     <None Remove="Assets\IMSLogo.ico" />
     <None Remove="Assets\IMSLogo.png" />
     <None Remove="Assets\logo.png" />
-    <None Remove="Assets\SplashScreen.png" />
+    <None Remove="Assets\SplashScreen.jpg" />
+    <None Remove="background.jpg" />
     <None Remove="logo.png" />
+    <None Remove="RubikScribble-Regular.ttf" />
+    <None Remove="skyBackground.png" />
+    <None Remove="Views\loginbackground.jpeg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -36,8 +40,11 @@
   <ItemGroup>
     <Resource Include="Assets\IMSLogo.png" />
     <Resource Include="Assets\logo.png" />
-    <Resource Include="Assets\SplashScreen.png" />
+    <Resource Include="Assets\SplashScreen.jpg" />
+    <Resource Include="background.jpg" />
     <Resource Include="logo.png" />
+    <Resource Include="skyBackground.png" />
+    <Resource Include="Views\loginbackground.jpeg" />
   </ItemGroup>
 
   <ItemGroup>

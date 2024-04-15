@@ -149,7 +149,7 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <Grid Grid.Column="0">
-                        <controls:FilterControl Filter="{Binding StorageDetailListViewHelper.Filter}"/>
+                        <controls:FilterControl Filter="{Binding StorageDetailListViewHelper.Filter}" FontSize="16" FontFamily="Arial Black"/>
                     </Grid>
                     <Grid Grid.Column="1">
                         <controls:PaginationControl
@@ -160,7 +160,7 @@
                             FirstPageCommand="{Binding StorageDetailListViewHelper.FirstPageCommand}"
                             PreviousPageCommand="{Binding StorageDetailListViewHelper.PreviousPageCommand}"
                             NextPageCommand="{Binding StorageDetailListViewHelper.NextPageCommand}"
-                            LastPageCommand="{Binding StorageDetailListViewHelper.LastPageCommand}"
+                            LastPageCommand="{Binding StorageDetailListViewHelper.LastPageCommand}" FontSize="16" FontFamily="Segoe UI Black"
                             />
                     </Grid>
                 </Grid>

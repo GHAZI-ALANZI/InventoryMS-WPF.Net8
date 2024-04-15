@@ -91,7 +91,7 @@
                         Text="Add Product"
                         VerticalAlignment="Center"
                         Style="{StaticResource MaterialDesignTextBlock}"
-                        FontWeight="DemiBold"/>
+                        FontWeight="DemiBold" FontSize="14" FontFamily="Arial Black"/>
 
                     <Button 
                         Command="{ Binding CreateOrderDetailCommand }"
@@ -200,12 +200,12 @@
                     Content="Submit"
                     Command="{Binding SubmitCommand}"
                     CommandParameter="{Binding}"
-                    Style="{StaticResource MaterialDesignPaperButton}"/>
+                    Style="{StaticResource MaterialDesignPaperButton}" Background="#FF00FFE7"/>
                 <Button 
                     Margin="10 0 0 0" 
                     Content="Cancel"
                     Command="{Binding CancelCommand}"
-                    Style="{StaticResource MaterialDesignPaperLightButton}"/>
+                    Style="{StaticResource MaterialDesignPaperLightButton}" Background="Red" Foreground="#DDFFFFFF"/>
 
             </StackPanel>
         </Grid>

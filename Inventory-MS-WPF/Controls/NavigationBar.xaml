@@ -6,20 +6,24 @@
              xmlns:local="clr-namespace:Inventory_MS_WPF.Controls"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" >
+    <UserControl.Resources>
+        <SolidColorBrush x:Key="PackIconCOLOR" Color="#FF745BFF"/>
+    </UserControl.Resources>
     <Grid>
         <ScrollViewer Style="{StaticResource MaterialDesignScrollViewer}" VerticalScrollBarVisibility="Auto">
             <StackPanel>
                 <Grid HorizontalAlignment="Center" Margin="0 20 0 0">
                     <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                        <Image Source="/Assets/IMSLogo.png" Width="44" VerticalAlignment="Center"/>
-                        <TextBlock Text="IMS" FontFamily="Bebas Neue" FontSize="60" VerticalAlignment="center"/>
+                        <Image Source="/Assets/IMSLogo.png" Width="81" VerticalAlignment="Center" Height="81"/>
+                        <TextBlock Text="IMS"  
+ FontSize="60" VerticalAlignment="center" Foreground="Black" FontFamily="Segoe UI Black"/>
                     </StackPanel>
                 </Grid>
 
                 <Grid HorizontalAlignment="Center" Margin="0 10 0 10">
                     <Label FontSize="16" VerticalAlignment="Center" FontWeight="Bold" Padding="20 0 20 0">
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="Hello, " />
+                            <TextBlock Text="Hello, " Foreground="#DD000000" FontFamily="Segoe UI Black" />
                             <TextBlock Text="{Binding CurrentStaff.StaffUsername}"/>
                         </StackPanel>
                     </Label>
@@ -30,8 +34,8 @@
                     <StackPanel>
                         <Button Command="{Binding NavigateToDashboardCommand}" HorizontalContentAlignment="Left" Background="Transparent" BorderBrush="Transparent">
                             <StackPanel Orientation="Horizontal" Margin="20 0 0 0">
-                                <materialDesign:PackIcon Kind="ViewDashboardOutline" VerticalAlignment="Center" Foreground="#2d89ef"/>
-                                <Label Margin="20 0 0 0" Content="Dashboard" FontSize="14" FontWeight="Bold"/>
+                                <materialDesign:PackIcon Kind="ViewDashboardOutline" VerticalAlignment="Center" Foreground="#FF0040F3" FontSize="18" Width="25" Height="25"/>
+                                <Label Margin="20 0 0 0" Content="Dashboard" FontWeight="Bold" Foreground="#DD000000" FontFamily="Segoe UI Black" FontSize="16" Height="28"/>
                             </StackPanel>
                         </Button>
 
@@ -46,8 +50,8 @@
                                 </Style>
                             </Button.Style>
                             <StackPanel Orientation="Horizontal" Margin="20 0 0 0">
-                                <materialDesign:PackIcon Kind="CartCheck" VerticalAlignment="Center" Foreground="#2d89ef"/>
-                                <Label Margin="20 0 0 0" Content="Orders" FontSize="14" FontWeight="Bold"/>
+                                <materialDesign:PackIcon Kind="CartCheck" VerticalAlignment="Center" Foreground="#FF0040F3" Width="25" Height="25"/>
+                                <Label Margin="20 0 0 0" Content="Orders" FontSize="16" FontWeight="Bold" Foreground="#DD000000" FontFamily="Segoe UI Black" Height="29"/>
                             </StackPanel>
                         </Button>
 
@@ -62,8 +66,8 @@
                                 </Style>
                             </Button.Style>
                             <StackPanel Orientation="Horizontal" Margin="20 0 0 0">
-                                <materialDesign:PackIcon Kind="BusinessCardOutline" VerticalAlignment="Center" Foreground="#2d89ef"/>
-                                <Label Margin="20 0 0 0" Content="Customers" FontSize="14" FontWeight="Bold"/>
+                                <materialDesign:PackIcon Kind="BusinessCardOutline" VerticalAlignment="Center" Foreground="#FF0040F3" Width="25" Height="25"/>
+                                <Label Margin="20 0 0 0" Content="Customers" FontSize="16" FontWeight="Bold" Foreground="#DD000000" FontFamily="Segoe UI Black" Height="28"/>
                             </StackPanel>
                         </Button>
                     </StackPanel>
@@ -83,8 +87,8 @@
                                 </Style>
                             </Button.Style>
                             <StackPanel Orientation="Horizontal" Margin="20 0 0 0">
-                                <materialDesign:PackIcon Kind="BoxOutline" VerticalAlignment="Center" Foreground="#2d89ef"/>
-                                <Label Margin="20 0 0 0" Content="Products" FontSize="14" FontWeight="Bold"/>
+                                <materialDesign:PackIcon Kind="BoxOutline" VerticalAlignment="Center" Foreground="#FF0040F3" Width="25" Height="25"/>
+                                <Label Margin="20 0 0 0" Content="Products" FontSize="16" FontWeight="Bold" Foreground="#DD000000" FontFamily="Segoe UI Black" Height="29"/>
                             </StackPanel>
                         </Button>
 
@@ -99,8 +103,8 @@
                                 </Style>
                             </Button.Style>
                             <StackPanel Orientation="Horizontal" Margin="20 0 0 0">
-                                <materialDesign:PackIcon Kind="Storage" VerticalAlignment="Center" Foreground="#2d89ef"/>
-                                <Label Margin="20 0 0 0" Content="Storages" FontSize="14" FontWeight="Bold"/>
+                                <materialDesign:PackIcon Kind="Storage" VerticalAlignment="Center" Foreground="#FF0040F3" Width="25" Height="25"/>
+                                <Label Margin="20 0 0 0" Content="Storages" FontSize="16" FontWeight="Bold" Foreground="#DD000000" FontFamily="Segoe UI Black" Height="30"/>
                             </StackPanel>
                         </Button>
 
@@ -115,8 +119,8 @@
                                 </Style>
                             </Button.Style>
                             <StackPanel Orientation="Horizontal" Margin="20 0 0 0">
-                                <materialDesign:PackIcon Kind="GlassBroken" VerticalAlignment="Center" Foreground="#2d89ef"/>
-                                <Label Margin="20 0 0 0" Content="Defectives" FontSize="14" FontWeight="Bold"/>
+                                <materialDesign:PackIcon Kind="GlassBroken" VerticalAlignment="Center" Foreground="#FF0040F3" Width="25" Height="25"/>
+                                <Label Margin="20 0 0 0" Content="Defectives" FontSize="16" FontWeight="Bold" Foreground="#DD000000" FontFamily="Segoe UI Black" Height="27"/>
                             </StackPanel>
                         </Button>
                     </StackPanel>
@@ -138,8 +142,8 @@
                                 </Style>
                             </Button.Style>
                             <StackPanel Orientation="Horizontal" Margin="20 0 0 0">
-                                <materialDesign:PackIcon Kind="CategoryOutline" VerticalAlignment="Center" Foreground="#2d89ef"/>
-                                <Label Margin="20 0 0 0" Content="Categories" FontSize="14" FontWeight="Bold"/>
+                                <materialDesign:PackIcon Kind="CategoryOutline" VerticalAlignment="Center" Foreground="#FF0040F3" Width="25" Height="25"/>
+                                <Label Margin="20 0 0 0" Content="Categories" FontSize="16" FontWeight="Bold" Foreground="#DD000000" FontFamily="Segoe UI Black" Height="29"/>
                             </StackPanel>
                         </Button>
 
@@ -154,8 +158,8 @@
                                 </Style>
                             </Button.Style>
                             <StackPanel Orientation="Horizontal" Margin="20 0 0 0">
-                                <materialDesign:PackIcon Kind="LocationOutline" VerticalAlignment="Center" Foreground="#2d89ef"/>
-                                <Label Margin="20 0 0 0" Content="Locations" FontSize="14" FontWeight="Bold"/>
+                                <materialDesign:PackIcon Kind="LocationOutline" VerticalAlignment="Center" Foreground="#FF0040F3" Width="25" Height="25"/>
+                                <Label Margin="20 0 0 0" Content="Locations" FontSize="16" FontWeight="Bold" Foreground="#DD000000" FontFamily="Segoe UI Black" Height="29"/>
                             </StackPanel>
                         </Button>
 
@@ -170,8 +174,8 @@
                                 </Style>
                             </Button.Style>
                             <StackPanel Orientation="Horizontal" Margin="20 0 0 0">
-                                <materialDesign:PackIcon Kind="ClipboardListOutline" VerticalAlignment="Center" Foreground="#2d89ef"/>
-                                <Label Margin="20 0 0 0" Content="Suppliers" FontSize="14" FontWeight="Bold"/>
+                                <materialDesign:PackIcon Kind="ClipboardListOutline" VerticalAlignment="Center" Foreground="#FF0040F3" Height="25" Width="25"/>
+                                <Label Margin="20 0 0 0" Content="Suppliers" FontSize="16" FontWeight="Bold" Foreground="#DD000000" FontFamily="Segoe UI Black" Height="31"/>
                             </StackPanel>
                         </Button>
                     </StackPanel>
@@ -191,8 +195,8 @@
                                 </Style>
                             </Button.Style>
                             <StackPanel Orientation="Horizontal" Margin="20 0 0 0">
-                                <materialDesign:PackIcon Kind="PersonOutline" VerticalAlignment="Center" Foreground="#2d89ef"/>
-                                <Label Margin="20 0 0 0" Content="Roles" FontSize="14" FontWeight="Bold"/>
+                                <materialDesign:PackIcon Kind="PersonOutline" VerticalAlignment="Center" Foreground="#FF0040F3" Width="25" Height="25"/>
+                                <Label Margin="20 0 0 0" Content="Roles" FontSize="16" FontWeight="Bold" Foreground="#DD000000" FontFamily="Segoe UI Black" Height="29"/>
                             </StackPanel>
                         </Button>
 
@@ -207,8 +211,8 @@
                                 </Style>
                             </Button.Style>
                             <StackPanel Orientation="Horizontal" Margin="20 0 0 0">
-                                <materialDesign:PackIcon Kind="CustomerService" VerticalAlignment="Center" Foreground="#2d89ef"/>
-                                <Label Margin="20 0 0 0" Content="Staffs" FontSize="14" FontWeight="Bold"/>
+                                <materialDesign:PackIcon Kind="CustomerService" VerticalAlignment="Center" Foreground="#FF0040F3" Width="25" Height="25"/>
+                                <Label Margin="20 0 0 0" Content="Staffs" FontSize="16" FontWeight="Bold" Foreground="#DD000000" FontFamily="Segoe UI Black" Height="27"/>
                             </StackPanel>
                         </Button>
                     </StackPanel>
@@ -227,8 +231,8 @@
                             </Style>
                         </Button.Style>
                         <StackPanel Orientation="Horizontal" Margin="20 0 0 0">
-                            <materialDesign:PackIcon Kind="File" VerticalAlignment="Center" Foreground="#2d89ef"/>
-                            <Label Margin="20 0 0 0" Content="Activity Logs" FontSize="14" FontWeight="Bold"/>
+                            <materialDesign:PackIcon Kind="File" VerticalAlignment="Center" Foreground="#FF0040F3" Width="25" Height="25"/>
+                            <Label Margin="20 0 0 0" Content="Activity Logs" FontSize="16" FontWeight="Bold" Foreground="#DD000000" FontFamily="Segoe UI Black" Height="28"/>
                         </StackPanel>
                     </Button>
                 </Grid>
@@ -237,8 +241,8 @@
                 <Grid Margin="0 20 0 0">
                     <Button Command="{Binding LogOutCommand}" HorizontalContentAlignment="Left" Background="Transparent" BorderBrush="Transparent">
                         <StackPanel Orientation="Horizontal" Margin="20 0 0 0">
-                            <materialDesign:PackIcon Kind="Logout" VerticalAlignment="Center" Foreground="#2d89ef"/>
-                            <Label Margin="20 0 0 0" Content="Logout" FontSize="14" FontWeight="Bold"/>
+                            <materialDesign:PackIcon Kind="Logout" VerticalAlignment="Center" Foreground="#FFFD000C" Width="25" Height="25"/>
+                            <Label Margin="20 0 0 0" Content="Logout" FontSize="16" FontWeight="Bold" Foreground="#DD000000" FontFamily="Segoe UI Black" Height="29" Background="{x:Null}"/>
                         </StackPanel>
                     </Button>
                 </Grid>

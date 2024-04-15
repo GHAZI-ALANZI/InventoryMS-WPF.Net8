@@ -10,8 +10,8 @@
 
         <Label FontFamily="Sogoe UI" FontWeight="Bold" HorizontalAlignment="Center">
             <StackPanel>
-                <TextBlock Text="SHIPPED" FontSize="18" Foreground="#2d89ef"/>
-                <TextBlock Text="{Binding ShippedOrdersCount}" Style="{StaticResource MaterialDesignTextBlock}"  FontSize="24" VerticalAlignment="Center"/>
+                <TextBlock Text="SHIPPED" FontSize="22" Foreground="#FF7B37FF"/>
+                <TextBlock Text="{Binding ShippedOrdersCount}" Style="{StaticResource MaterialDesignTextBlock}"  FontSize="24" VerticalAlignment="Center" Foreground="#DDFBFF02"/>
             </StackPanel>
         </Label>
 

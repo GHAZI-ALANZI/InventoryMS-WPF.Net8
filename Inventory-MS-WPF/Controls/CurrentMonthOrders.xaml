@@ -11,10 +11,10 @@
         <Label FontFamily="Sogoe UI" FontWeight="Bold" HorizontalAlignment="Center">
             <StackPanel Orientation="Horizontal">
                 <StackPanel VerticalAlignment="Center">
-                    <TextBlock Text="ORDERS" FontSize="18" Foreground="#2d89ef"/>
-                    <TextBlock Text="FOR THIS MONTH" FontSize="8" HorizontalAlignment="Center"/>
+                    <TextBlock Text="ORDERS" FontSize="22" Foreground="#FF7B37FF"/>
+                    <TextBlock Text="FOR THIS MONTH" HorizontalAlignment="Center" Foreground="#DDFBFF02"/>
                 </StackPanel>
-                <TextBlock Text="{Binding CurrentMonthOrders}" Style="{StaticResource MaterialDesignTextBlock}" Margin="20 0 0 0" FontSize="24" VerticalAlignment="Center"/>
+                <TextBlock Text="{Binding CurrentMonthOrders}" Style="{StaticResource MaterialDesignTextBlock}" Margin="20 0 0 0" FontSize="24" VerticalAlignment="Center" Foreground="#DDFBFF02"/>
             </StackPanel>
         </Label>
 

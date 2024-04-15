@@ -117,5 +117,10 @@ namespace Inventory_MS_WPF.Controls
         {
             InitializeComponent();
         }
+
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

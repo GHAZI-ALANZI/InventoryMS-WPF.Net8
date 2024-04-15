@@ -148,7 +148,7 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <Grid Grid.Column="0">
-                        <controls:FilterControl Filter="{Binding RoleListViewHelper.Filter}"/>
+                        <controls:FilterControl Filter="{Binding RoleListViewHelper.Filter}" FontSize="16" FontFamily="Segoe UI Black"/>
                     </Grid>
                     <Grid Grid.Column="1">
                         <controls:PaginationControl
@@ -159,7 +159,7 @@
                             FirstPageCommand="{Binding RoleListViewHelper.FirstPageCommand}"
                             PreviousPageCommand="{Binding RoleListViewHelper.PreviousPageCommand}"
                             NextPageCommand="{Binding RoleListViewHelper.NextPageCommand}"
-                            LastPageCommand="{Binding RoleListViewHelper.LastPageCommand}"
+                            LastPageCommand="{Binding RoleListViewHelper.LastPageCommand}" FontSize="16" FontFamily="Arial Black"
                         />
                     </Grid>
                 </Grid>

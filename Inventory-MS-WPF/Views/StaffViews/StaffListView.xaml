@@ -171,7 +171,7 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <Grid Grid.Column="0">
-                        <controls:FilterControl Filter="{Binding StaffListViewHelper.Filter}"/>
+                        <controls:FilterControl Filter="{Binding StaffListViewHelper.Filter}" FontSize="16" FontFamily="Arial Black"/>
                     </Grid>
                     <Grid Grid.Column="1">
                         <controls:PaginationControl
@@ -182,7 +182,7 @@
                             FirstPageCommand="{Binding StaffListViewHelper.FirstPageCommand}"
                             PreviousPageCommand="{Binding StaffListViewHelper.PreviousPageCommand}"
                             NextPageCommand="{Binding StaffListViewHelper.NextPageCommand}"
-                            LastPageCommand="{Binding StaffListViewHelper.LastPageCommand}"
+                            LastPageCommand="{Binding StaffListViewHelper.LastPageCommand}" FontSize="16" FontFamily="Segoe UI Black"
                         />
                     </Grid>
                 </Grid>

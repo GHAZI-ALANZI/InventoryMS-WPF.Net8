@@ -10,10 +10,10 @@
         <Label FontFamily="Sogoe UI" FontWeight="Bold" HorizontalAlignment="Center">
             <StackPanel Orientation="Horizontal">
                 <StackPanel VerticalAlignment="Center">
-                    <TextBlock Text="PRODUCTS" FontSize="16" Foreground="#2d89ef"/>
-                    <TextBlock Text="CURRENTLY IN STOCK" FontSize="8" HorizontalAlignment="Center"/>
+                    <TextBlock Text="PRODUCTS" FontSize="22" Foreground="#FF7B37FF"/>
+                    <TextBlock Text="CURRENTLY IN STOCK" HorizontalAlignment="Center" Foreground="#DDFBFF02"/>
                 </StackPanel>
-                <TextBlock Text="{Binding ProductsInStock}" Style="{StaticResource MaterialDesignTextBlock}" Margin="20 0 0 0" FontSize="24" VerticalAlignment="Center"/>
+                <TextBlock Text="{Binding ProductsInStock}" Style="{StaticResource MaterialDesignTextBlock}" Margin="20 0 0 0" FontSize="24" VerticalAlignment="Center" Foreground="#DDFBFF02"/>
             </StackPanel>
         </Label>
     </Grid>

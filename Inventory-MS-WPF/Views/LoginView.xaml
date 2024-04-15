@@ -16,7 +16,10 @@
 
         <materialDesign:DialogHost CloseOnClickAway="True" x:Name="DialogHost" >
             <StackPanel>
-                <materialDesign:PopupBox HorizontalAlignment="Right" Margin="0 20 20 0" PlacementMode="BottomAndAlignRightEdges" StaysOpen="False" Height="25">
+                <StackPanel.Background>
+                    <ImageBrush ImageSource="/Views/loginbackground.jpeg"/>
+                </StackPanel.Background>
+                <materialDesign:PopupBox HorizontalAlignment="Right" Margin="0 20 20 0" PlacementMode="BottomAndAlignRightEdges" StaysOpen="False" Height="25" Foreground="White">
                     <StackPanel>
                         <StackPanel Margin="16 10 0 6" Orientation="Horizontal" HorizontalAlignment="Center">
                             <TextBlock VerticalAlignment="Center" Text="Dark Mode"/>
@@ -27,9 +30,16 @@
                         <Button x:Name="btn_exit" ToolTip="Close Application" Content="Exit Application" Command="{Binding ExitAppCommand }"/>
                     </StackPanel>
                 </materialDesign:PopupBox>
-
-                <Image Source="/Assets/IMSLogo.png" Height="80"/>
-                <TextBlock Margin="0 20 0 0" HorizontalAlignment="Center" FontSize="28" FontWeight="Bold" Text="Welcome Back" Style="{StaticResource MaterialDesignTextBlock}"/>
+                <TextBlock Margin="0 20 0 0" HorizontalAlignment="Center" FontSize="28" FontWeight="Bold" Text="Welcome Back" Style="{StaticResource MaterialDesignTextBlock}" FontFamily="Segoe Print" Foreground="White" RenderTransformOrigin="0.5,0.5">
+                    <TextBlock.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform Y="-30"/>
+                        </TransformGroup>
+                    </TextBlock.RenderTransform>
+                </TextBlock>
 
                 <StackPanel Margin="50 0 50 0">
                     <TextBox 
@@ -39,18 +49,36 @@
                         BorderThickness="2"
                         Padding="10"
                         Text="{Binding Username, UpdateSourceTrigger=PropertyChanged}"
-                        BorderBrush="{DynamicResource MaterialDesignDivider}" 
-                        Style="{StaticResource MaterialDesignOutlinedTextBox}"
-                        />
+                        BorderBrush="{DynamicResource MaterialDesignBackground}" 
+                        Style="{StaticResource MaterialDesignOutlinedTextBox}" Foreground="White" RenderTransformOrigin="0.5,0.5"
+                        >
+                        <TextBox.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform Y="-39"/>
+                            </TransformGroup>
+                        </TextBox.RenderTransform>
+                    </TextBox>
 
                     <PasswordBox 
                         Margin="0 20 0 0"
                         x:Name="txtPassword" 
                         Padding="10"
                         materialDesign:HintAssist.Hint="Enter Password" BorderThickness="2"      
-                        BorderBrush="{DynamicResource MaterialDesignDivider}" 
-                        Style="{StaticResource MaterialDesignOutlinedPasswordBox}"
-                        />
+                        BorderBrush="{DynamicResource MaterialDesignBackground}" 
+                        Style="{StaticResource MaterialDesignOutlinedPasswordBox}" Foreground="White" RenderTransformOrigin="0.5,0.5"
+                        >
+                        <PasswordBox.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform Y="-36"/>
+                            </TransformGroup>
+                        </PasswordBox.RenderTransform>
+                    </PasswordBox>
 
                     <Button 
                         Margin="0 20 0 0" 
@@ -60,7 +88,15 @@
                         materialDesign:ButtonAssist.CornerRadius="10" 
                         Content="Login" 
                         Command="{ Binding LoginUserCommand }"
-                        CommandParameter="{Binding ElementName=txtPassword}">
+                        CommandParameter="{Binding ElementName=txtPassword}" RenderTransformOrigin="0.5,0.5">
+                        <Button.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform Y="136"/>
+                            </TransformGroup>
+                        </Button.RenderTransform>
                     </Button>
 
                     <!--<Button 

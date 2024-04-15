@@ -21,15 +21,16 @@
             </Grid.ColumnDefinitions>
 
             <materialDesign:Card Grid.Column="0" UniformCornerRadius="10" Margin="10 10 10 10">
-                <controls:CurrentMonthRevenue/>
+                <controls:CurrentMonthRevenue Background="{DynamicResource RevenueBackground}">
+                </controls:CurrentMonthRevenue>
             </materialDesign:Card>
 
             <materialDesign:Card Grid.Column="1" UniformCornerRadius="10" Margin="10 10 10 10">
-                <controls:CurrentMonthOrders/>
+                <controls:CurrentMonthOrders Background="{DynamicResource RevenueBackground}"/>
             </materialDesign:Card>
 
             <materialDesign:Card Grid.Column="2" UniformCornerRadius="10" Margin="10 10 10 10">
-                <controls:ProductsInStockControl/>
+                <controls:ProductsInStockControl Background="{DynamicResource RevenueBackground}"/>
             </materialDesign:Card>
         </Grid>
 
@@ -50,19 +51,19 @@
             </Label>
 
             <materialDesign:Card Grid.Column="1" UniformCornerRadius="10" Margin="10 10 10 10">
-                <controls:ProcessingOrderCountControl/>
+                <controls:ProcessingOrderCountControl Background="{DynamicResource RevenueBackground}"/>
             </materialDesign:Card>
 
             <materialDesign:Card Grid.Column="2" UniformCornerRadius="10" Margin="10 10 10 10">
-                <controls:ShippedOrderCountControl/>
+                <controls:ShippedOrderCountControl Background="{DynamicResource RevenueBackground}"/>
             </materialDesign:Card>
 
             <materialDesign:Card Grid.Column="3" UniformCornerRadius="10" Margin="10 10 10 10">
-                <controls:InTransitOrderCountControl/>
+                <controls:InTransitOrderCountControl Background="{DynamicResource RevenueBackground}"/>
             </materialDesign:Card>
 
             <materialDesign:Card Grid.Column="4" UniformCornerRadius="10" Margin="10 10 10 10">
-                <controls:DeliveredOrderCountControl/>
+                <controls:DeliveredOrderCountControl Background="{DynamicResource RevenueBackground}"/>
             </materialDesign:Card>
         </Grid>
 
